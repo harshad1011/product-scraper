@@ -1,0 +1,22 @@
+{
+  "name": "product-scraper",
+  "version": "1.0.0",
+  "description": "Web scraper for E-Commerce platforms like Grofers, Big Basket, Nature's Basket. Returns product details given product's URL.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "web-scraper",
+    "scraper",
+    "e-commerce",
+    "web site scraper"
+  ],
+  "author": "Harshad Shirsat",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
+  }
+}
