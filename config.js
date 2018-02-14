@@ -38,7 +38,11 @@ var consolidateData = function ($, data, site) {
 
     if (value) {
         Object.keys(value).forEach(function (key, index) {
-            response[key] = $(value[key]).text();
+            if (key.toLowerCase() == 'price') {
+                response[key] = parseInt($(value[key]).text().match(/\d+/)[0]);
+            } else {
+                response[key] = $(value[key]).text();
+            }
         });
     }
     return response;
