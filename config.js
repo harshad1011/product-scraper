@@ -9,7 +9,7 @@ var sites = {
     'grofers.com': {
         name: '.LinesEllipsis',
         price: '.pdp-product__price--new',
-        description: '.product-attributes__attr--description'
+        description: 'div.product-attributes__attr--description'
     },
     'www.bigbasket.com': {
         name: 'h1',

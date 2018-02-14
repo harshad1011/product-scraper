@@ -32,6 +32,12 @@ var printData = function (data) {
  */
 var scrape = function (url, data, cb) {
 
+    if (!url) {
+        console.error("No URL found to scrape");
+        cb && cb("Please provide a url to scrape from as first parameter.");
+        return;
+    }
+
     var urlData = config.parseUrl(url);
     var jar = rp.jar();
 
@@ -108,7 +114,7 @@ function parseArgs() {
             var obj;
             fs.readFile(args[dataIdx + 1], 'utf8', function (err, data) {
                 if (err) {
-                    throw err
+                    throw err;
                 };
                 obj = JSON.parse(data);
                 scrape(args[urlIdx + 1], obj, null);
@@ -122,7 +128,9 @@ function parseArgs() {
     }
 }
 
-parseArgs();
+if (require.main === module) {
+    parseArgs();
+}
 
 module.exports = {
     productScraper: scrape
