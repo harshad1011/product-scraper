@@ -14,9 +14,12 @@ It can also be used for customized scraping of any URL, given the json object. S
 Running npm via command line
 `node index.js -u http://www.naturesbasket.co.in/Products/Organic-Tulsi-Green-Tea---25-TB---Organic-India/4054_0_0_0 -p`
 
+Install npm via command line
+`npm install @harshad1011/product-scraper --save`
+
 Importing npm as a node module:
 ```
-var ps = require('product-scraper');
+var ps = require('@harshad1011/product-scraper');
 ps.productScraper("https://grofers.com/prn/bitter-gourd-karela/prid/197969", {
     "name": ".LinesEllipsis",
     "price": ".pdp-product__price--new"
