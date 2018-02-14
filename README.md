@@ -12,10 +12,14 @@ It can also be used for customized scraping of any URL, given the json object. S
 
 ## Examples
 Running npm via command line
-`node index.js -u http://www.naturesbasket.co.in/Products/Organic-Tulsi-Green-Tea---25-TB---Organic-India/4054_0_0_0 -p`
+```
+node index.js -u http://www.naturesbasket.co.in/Products/Organic-Tulsi-Green-Tea---25-TB---Organic-India/4054_0_0_0 -p
+```
 
 Install npm via command line
-`npm install @harshad1011/product-scraper --save`
+```
+npm install @harshad1011/product-scraper --save
+```
 
 Importing npm as a node module:
 ```
