@@ -33,7 +33,7 @@ var printData = function (data) {
 var scrape = function (url, data, cb) {
 
     var urlData = config.parseUrl(url);
-    var jar = request.jar();
+    var jar = rp.jar();
 
     var options = {
         uri: url,
