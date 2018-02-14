@@ -12,11 +12,23 @@
     "e-commerce",
     "web site scraper"
   ],
-  "author": "Harshad Shirsat",
-  "license": "ISC",
+  "author": {
+    "name": "Harshad Shirsat",
+    "email": "learningkoolstuff@gmail.com"
+  },
+  "license": "MIT",
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
     "request": "^2.83.0",
     "request-promise": "^4.2.2"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harshad1011/product-scraper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/harshad1011/product-scraper/issues"
+  },
+  "homepage": "https://github.com/harshad1011/product-scraper#readme"
 }
