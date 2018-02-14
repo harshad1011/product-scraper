@@ -18,10 +18,20 @@ var sites = {
     }
 }
 
+/**
+ * Parses given string with default 'url' package
+ * @param {String} url url to be parsed
+ */
 var parseUrl = function (url) {
     return url ? urlPkg.parse(url) : "";
 }
 
+/**
+ * 
+ * @param {Object} $ Object containing HTML response loaded by cheerio
+ * @param {Object} [data] If specifed, custom data in which response needs to be formatted
+ * @param {String} [site] If specifed, scrapes the data configured from default sites
+ */
 var consolidateData = function ($, data, site) {
     var response = {};
     var value = data ? data : sites[site];
