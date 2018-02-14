@@ -8,7 +8,7 @@ It can also be used for customized scraping of any URL, given the json object. S
 1. productScraper: This API takes 3 parameters.
    - First parameter is url in string type.
    - Second parameter is meta-data, which is used to scrape custom data from given url. This parameter is optional.
-   - Third parameter is callback function to which takes argument error & data.
+   - Third parameter is callback function to which takes argument error & data.`
 
 ## Examples
 Running npm via command line
@@ -32,3 +32,5 @@ ps.productScraper("https://grofers.com/prn/bitter-gourd-karela/prid/197969", {
     }
 });
 ```
+## Limitations
+This npm doesn't work well with dynamic pages. Feel free to suggest changes.
