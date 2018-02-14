@@ -33,13 +33,14 @@ var printData = function (data) {
 var scrape = function (url, data, cb) {
 
     var urlData = config.parseUrl(url);
+    var jar = request.jar();
 
     var options = {
         uri: url,
         headers: {
             'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.59 Safari/537.36'
         },
-        resolveWithFullResponse: true,
+        jar: jar,
         method: method,
         transform: function (body, error) {
             return cheerio.load(body);
