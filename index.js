@@ -6,19 +6,39 @@ var args = process.argv;
 var method = 'GET';
 
 /**
+ * This function prints message on standard output if executed via command line
+ * @param {String} msg message to be printed on standard output
+ */
+var log = function (msg) {
+    if (require.main === module) {
+        console.log(msg);
+    }
+}
+
+/**
+ * This function throws error message on standard output if executed via command line
+ * @param {String} msg message to be printed on standard output
+ */
+var error = function (msg) {
+    if (require.main === module) {
+        console.error(msg);
+    }
+}
+
+/**
  * This function writes output to standard output
  * @param {Object} data An object containing data to be printed on standard output
  */
 var printData = function (data) {
     if (args.indexOf('--print') >= 2 ||
         args.indexOf('-p') >= 2) {
-        console.log("\n====== Product Details =====");
+        log("\n====== Product Details =====");
         if (data) {
             Object.keys(data).forEach(function (key, index) {
-                console.log(key.toUpperCase() + ": " + data[key]);
+                log(key.toUpperCase() + ": " + data[key]);
             });
         } else {
-            console.log("No product details found. Please try again");
+            log("No product details found. Please try again");
         }
     }
 }
@@ -33,8 +53,8 @@ var printData = function (data) {
 var scrape = function (url, data, cb) {
 
     if (!url) {
-        console.error("No URL found to scrape");
-        cb && cb("Please provide a url to scrape from as first parameter.");
+        error("No URL found to scrape");
+        cb && cb("Please provide a url to scrape from as first parameter.", null);
         return;
     }
 
@@ -65,7 +85,7 @@ var scrape = function (url, data, cb) {
 
         cb && cb(null, response);
     }).catch(function (err) {
-        console.error(err);
+        error(err);
         cb && cb(err, null);
     });
 }
@@ -74,12 +94,12 @@ var scrape = function (url, data, cb) {
  * This function prints help if --help/-h argument is mentioned in command line
  */
 function printHelp() {
-    console.log("Run this npm with command - node index.js --url / -u <<url of the product>>");
-    console.log("Arguments accepted:");
-    console.log("\t1. --help / -h: Provides help regarding how to run on command line");
-    console.log("\t2. --url / -u << url_string >>: Specifies that next parameter is url to be scraped.");
-    console.log("\t3. --data / -d << path_to_json_file >>: Specifies that next parameter is json file which contains data that needs to be scraped. If not specified npm searches for default sites.");
-    console.log("\t4. --method / -m << url_request_method >>: Optional parameter which specifies what method to be used while making request to url. Default method is GET.");
+    log("Run this npm with command - node index.js --url / -u <<url of the product>>");
+    log("Arguments accepted:");
+    log("\t1. --help / -h: Provides help regarding how to run on command line");
+    log("\t2. --url / -u << url_string >>: Specifies that next parameter is url to be scraped.");
+    log("\t3. --data / -d << path_to_json_file >>: Specifies that next parameter is json file which contains data that needs to be scraped. If not specified npm searches for default sites.");
+    log("\t4. --method / -m << url_request_method >>: Optional parameter which specifies what method to be used while making request to url. Default method is GET.");
 }
 
 /**

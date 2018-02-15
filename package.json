@@ -4,7 +4,7 @@
   "description": "Web scraper for E-Commerce platforms like Grofers, Big Basket, Nature's Basket. Returns product details given product's URL.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test-spec.js"
   },
   "keywords": [
     "web-scraper",
