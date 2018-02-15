@@ -1,6 +1,6 @@
 {
   "name": "@harshad1011/product-scraper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Web scraper for E-Commerce platforms like Grofers, Big Basket, Nature's Basket. Returns product details given product's URL.",
   "main": "index.js",
   "scripts": {
